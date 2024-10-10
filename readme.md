@@ -69,7 +69,8 @@ pip install -r requirements.txt
 Create a `.env` file in the root directory and add your API keys in a way it can be accessed in the app.
 ```bash
 SERPER_API_KEY=<Your Serper Api Key>
-ANTHROPIC_API_KEY=<Your Anthropic Api Key> #  # Ensure you have a paid subscription for the Anthropic API free api service will not work 
+ANTHROPIC_API_KEY=<Your Anthropic Api Key> #  # Ensure you have a paid subscription for the Anthropic API free api service will not work
+```
 
 
 ### Step 5: Run the Flask Backend
