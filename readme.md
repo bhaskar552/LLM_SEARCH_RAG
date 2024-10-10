@@ -26,24 +26,19 @@ Note: ONLY use the packages provided in the requirements.txt file (similar/alter
 6. **Response Sent Back to Streamlit Interface**:
    - The Flask backend sends the generated answer back to the Streamlit interface, where it is displayed to the user.
 
-## What we expect?
-We expect you to explore, understand the components and functionality, and demonstrate your ability to work with the provided tools and deliver a solution that meets the requirements. 
-
-Bonus points: If you use Langchain (or similar tools to add memory to the system) to make the chatbot conversational.
 ## Prerequisites
 
 - Python 3.8 or above
 
 ## Setup Instructions
 
-### Step 1: Clone or download the Repository (if emailed)
+### Step 1: Clone  the Repository 
 
 ```bash
-git clone https://github.com/your-repo-url.git
-cd project_name
+git clone https://github.com/bhaskar552/LLM_SEARCH_RAG.git
+cd LLM_SEARCH_RAG
 ```
 
-Or download it
 
 ### Step 2: Set Up a Virtual Environment
 
@@ -72,6 +67,9 @@ pip install -r requirements.txt
 ### Step 4: Set Up Environment Variables
 
 Create a `.env` file in the root directory and add your API keys in a way it can be accessed in the app.
+```bash
+SERPER_API_KEY=<Your Serper Api Key>
+ANTHROPIC_API_KEY=<Your Anthropic Api Key> #  # Ensure you have a paid subscription for the Anthropic API free api service will not work 
 
 
 ### Step 5: Run the Flask Backend
@@ -102,13 +100,3 @@ Open your web browser and go to `http://localhost:8501`. You can now interact wi
 - **streamlit_app/**: Contains the Streamlit front-end code.
 - **.env**: Stores API keys (make sure this file is not included in version control).
 - **requirements.txt**: Lists the project dependencies.
-
-## Task Instructions for Candidates
-
-You are required to complete the following:
-
-1. Implement the functionality to fetch, process, and generate responses from an LLM using the provided APIs.
-2. Integrate the APIs with the Flask backend.
-3. Display the results in the Streamlit frontend.
-
-Good luck!
