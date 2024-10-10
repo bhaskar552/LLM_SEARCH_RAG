@@ -10,12 +10,20 @@ load_dotenv()
 
 SERPER_API_KEY = os.getenv('SERPER_API_KEY')
 ANTHROPIC_API_KEY = os.getenv('ANTHROPIC_API_KEY')
+def check_api_keys():
+    if not SERPER_API_KEY:
+        raise ValueError("Missing SERPER_API_KEY. Please check your environment variables.")
+    if not ANTHROPIC_API_KEY:
+        raise ValueError("Missing ANTHROPIC_API_KEY. Please check your environment variables.")
 
 
 def search_articles(query):
     """
     Searches for articles related to the query using Serper API.
+
     """
+    check_api_keys()
+
     url = "https://google.serper.dev/search"
     payload = json.dumps({
         "q": query  # The search query
@@ -83,6 +91,7 @@ def concatenate_content(articles):
 
 def generate_answer(content, query, conversation_history):
     conversation_string = "\n".join([f"{msg.type}: {msg.content}" for msg in conversation_history])
+    check_api_keys()
 
     prompt = f"""
         You are a knowledgeable AI assistant tasked with delivering a well-informed, context-aware response. Below are the details to consider:
